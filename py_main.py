@@ -2,7 +2,7 @@ from py_lint import py_lint
 from py_test import py_test
 
 
-def main():
+def collect_results():
     result = {
         'points': 0.0,
         'max': 0.0,
@@ -31,4 +31,4 @@ def html_out(results):
 
 
 if __name__ == '__main__':
-    main()
+    collect_results()
