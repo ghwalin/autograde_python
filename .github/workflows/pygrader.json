@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Test success with return",
+    "function": "test_area_base_height",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "Test success with return",
+    "function": "test_area_three_sides",
+    "timeout": 10,
+    "points": 1
+  }
+]
