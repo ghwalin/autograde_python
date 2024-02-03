@@ -53,6 +53,7 @@ def py_test():
     results['points'] = total_points
     results['max'] = total_max
 
+    print (results)
     return results
 
 
@@ -64,7 +65,6 @@ def extract_assertion(message, result) -> None:
             result['expected'] = message[index + 1]
             result['actual'] = message[index + 2]
             break
-            pass
 
 
 def load_cases() -> list:

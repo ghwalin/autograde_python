@@ -1,6 +1,3 @@
-import json
-from dataclasses import dataclass
-
 from pylint import lint
 from pylint.reporters import CollectingReporter
 
@@ -28,7 +25,9 @@ def py_lint():
         results['messages'].append(output)
 
     results['points'] = pylint_obj.linter.stats.global_note
-    print(json.dumps(results))
+
+    print (results)
+    return results
 
 
 if __name__ == '__main__':
