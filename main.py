@@ -19,6 +19,7 @@ def main():
     result['max'] += testresults['max']
     result['feedback'] += html_out(testresults['feedback'])
 
+    print (result)
 
 def html_out(results):
     output = '<table><tr><th>name</th><th>message</th><th>expected</th><th>actual</th><th>points</th><th>max</th></tr>'
