@@ -31,7 +31,7 @@ def py_test():
         with Capturing() as output:
             exitcode = pytest.main(args)
         if exitcode == ExitCode.OK:
-            summary = output[len(output)-1]
+            summary = output[len(output) - 1]
             if 'passed' in summary:
                 result['message'] = 'Success'
                 result['points'] = case.points
@@ -53,7 +53,7 @@ def py_test():
     results['points'] = total_points
     results['max'] = total_max
 
-    print (results)
+    print(results)
     return results
 
 
@@ -74,7 +74,7 @@ def load_cases() -> list:
     :rtype: none
     """
     cases_list = list()
-    file = open('./.github/classroom/pygrader.json', encoding='UTF-8') # FIXME Input argument
+    file = open('./.github/classroom/pygrader.json', encoding='UTF-8')  # FIXME Input argument
     cases = json.load(file)
     for item in cases:
         testcase = Testcase(
