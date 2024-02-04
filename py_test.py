@@ -1,8 +1,8 @@
 import json
+import os
 import sys
 from dataclasses import dataclass
 from io import StringIO
-import os
 
 import pytest
 from _pytest.config import ExitCode
@@ -77,7 +77,7 @@ def load_cases() -> list:
     os.listdir()
     cases_list = list()
     try:
-        with open('.github/workflows/pygrader.json', encoding='UTF-8') as file: 
+        with open('.github/workflows/pygrader.json', encoding='UTF-8') as file:
             cases = json.load(file)
             for item in cases:
                 testcase = Testcase(

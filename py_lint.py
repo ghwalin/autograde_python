@@ -4,7 +4,7 @@ from pylint.reporters import CollectingReporter
 
 def py_lint():
     pylint_opts = [
-        'py_main.py'
+        'main.py'
     ]
 
     reporter = CollectingReporter()
@@ -13,7 +13,7 @@ def py_lint():
         'category': 'pylint',
         'points': 0,
         'max': 10,
-        'messages': []
+        'feedback': []
     }
     for message in reporter.messages:
         output = {
@@ -22,7 +22,7 @@ def py_lint():
             'path': message.path,
             'line': message.line
         }
-        results['messages'].append(output)
+        results['feedback'].append(output)
 
     results['points'] = pylint_obj.linter.stats.global_note
 
