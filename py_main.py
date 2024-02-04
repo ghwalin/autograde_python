@@ -27,7 +27,7 @@ def main():
         function='mod_assignexternal_update_grade',
         user_name=USERNAME,
         assignment='lu99-a99-test',
-        external_link=f'{SERVER}/{REPO}'
+        external_link=f'{SERVER}/{REPOPATH}'
     )
 
 def collect_results() -> dict:
