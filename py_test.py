@@ -79,7 +79,7 @@ def load_cases() -> list:
         print(file)
     cases_list = list()
     try:
-        with open('./.github/workflows/pygrader.json', encoding='UTF-8') as file:
+        with open('./.github/classroom/pygrader.json', encoding='UTF-8') as file:
             cases = json.load(file)
             for item in cases:
                 testcase = Testcase(
