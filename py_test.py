@@ -2,6 +2,7 @@ import json
 import sys
 from dataclasses import dataclass
 from io import StringIO
+import os
 
 import pytest
 from _pytest.config import ExitCode
@@ -73,6 +74,7 @@ def load_cases() -> list:
     :return: a list of testcases to be run
     :rtype: none
     """
+    os.listdir()
     cases_list = list()
     file = open('.github/workflows/pygrader.json', encoding='UTF-8')  # FIXME Input argument
     cases = json.load(file)
