@@ -10,6 +10,12 @@ on:
 env:
   DEVOPS_DIR: devops
   GHSECRET: ${{ secrets.GITHUB_TOKEN }}
+  TARGET_URL: https://moodle.it.bzz.ch/moodle
+  TOKEN: secrets.MOODLE_TOKEN
+  FUNCTION: mod_assignexternal_update_grade
+  ASSIGNMENT: lu99-a99-test
+  USERNAME: ghwalin
+  LINK: https://github.com/ghwalin/autograde_python
 
 permissions:
   checks: write
