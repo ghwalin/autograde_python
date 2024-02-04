@@ -76,16 +76,19 @@ def load_cases() -> list:
     """
     os.listdir()
     cases_list = list()
-    file = open('.github/workflows/pygrader.json', encoding='UTF-8')  # FIXME Input argument
-    cases = json.load(file)
-    for item in cases:
-        testcase = Testcase(
-            name=item['name'],
-            function=item['function'],
-            timeout=item['timeout'],
-            points=item['points']
-        )
-        cases_list.append(testcase)
+    try:
+        with open('.github/workflows/pygrader.json', encoding='UTF-8') as file: 
+        cases = json.load(file)
+        for item in cases:
+            testcase = Testcase(
+                name=item['name'],
+                function=item['function'],
+                timeout=item['timeout'],
+                points=item['points']
+            )
+            cases_list.append(testcase)
+    except IOError as ex:
+        pass
     return cases_list
 
 
