@@ -14,7 +14,7 @@ env:
   TOKEN: ${{ secrets.MOODLE_TOKEN }}
   FUNCTION: mod_assignexternal_update_grade
   ASSIGNMENT: lu99-a99-test
-  USERNAME: ghwalin
+  USERNAME: ${{ github.actor }}
   LINK: ${{ github.server_url }}/${{ github.repository }}
 
 permissions:
