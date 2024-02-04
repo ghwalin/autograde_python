@@ -74,7 +74,9 @@ def load_cases() -> list:
     :return: a list of testcases to be run
     :rtype: none
     """
-    os.listdir()
+    dirs = os.listdir()
+    for file in dirs:
+        print(file)
     cases_list = list()
     try:
         with open('.github/workflows/pygrader.json', encoding='UTF-8') as file:
