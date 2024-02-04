@@ -14,7 +14,7 @@ def main():
     USERNAME = os.environ['USERNAME']
     LINK = os.environ['LINK']
 
-    print (TARGET_URL, TOKEN, FUNCTION, ASSIGNMENT, USERNAME, LINK)
+    print (f'TARGET_URL={TARGET_URL}, TOKEN={TOKEN}, FUNCTION={FUNCTION}, ASSIGNMENT={ASSIGNMENT}, USERNAME={USERNAME}, LINK={LINK}')
 
     result = collect_results()
     update_moodle(
