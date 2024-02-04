@@ -13,9 +13,9 @@ env:
   TARGET_URL: https://moodle.it.bzz.ch/moodle
   TOKEN: ${{ secrets.MOODLE_TOKEN }}
   FUNCTION: mod_assignexternal_update_grade
-  ASSIGNMENT: lu99-a99-test
   USERNAME: ${{ github.actor }}
-  LINK: ${{ github.server_url }}/${{ github.repository }}
+  SERVER: ${{ github.server_url }}
+  REPO: ${{ github.repository }}
 
 permissions:
   checks: write
