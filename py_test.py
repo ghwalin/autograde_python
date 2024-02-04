@@ -79,7 +79,7 @@ def load_cases() -> list:
         print(file)
     cases_list = list()
     try:
-        with open('.github/workflows/pygrader.json', encoding='UTF-8') as file:
+        with open('./.github/workflows/pygrader.json', encoding='UTF-8') as file:
             cases = json.load(file)
             for item in cases:
                 testcase = Testcase(
@@ -90,7 +90,7 @@ def load_cases() -> list:
                 )
                 cases_list.append(testcase)
     except IOError as ex:
-        pass
+        print('file pygrader.json not found')
     return cases_list
 
 
