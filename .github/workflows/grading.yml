@@ -41,4 +41,4 @@ jobs:
       - name: execute python script
         run: |
           ls -la
-          # python3 py_main.py
+          # python3 ./autograde/py_main.py
