@@ -54,7 +54,6 @@ def py_test():
     results['points'] = total_points
     results['max'] = total_max
 
-    print(results)
     return results
 
 
@@ -74,9 +73,6 @@ def load_cases() -> list:
     :return: a list of testcases to be run
     :rtype: none
     """
-    dirs = os.listdir()
-    for file in dirs:
-        print(file)
     cases_list = list()
     try:
         with open('./.github/classroom/pygrader.json', encoding='UTF-8') as file:
