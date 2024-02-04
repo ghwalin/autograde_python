@@ -44,7 +44,7 @@ def py_test():
             extract_assertion(output, result)
             print('assert fail')
         else:
-            result.message = 'Unknown error, check GitHub Actions for details'
+            result['message'] = 'Unknown error, check GitHub Actions for details'
             print('Fail')
 
         total_points += result['points']
