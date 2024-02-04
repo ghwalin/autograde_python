@@ -19,13 +19,23 @@ def collect_results():
     result['max'] += testresults['max']
     result['feedback'] += html_out(testresults['feedback'])
 
-    print (result)
+    print(result)
+
 
 def html_out(results):
-    output = '<table><tr><th>name</th><th>message</th><th>expected</th><th>actual</th><th>points</th><th>max</th></tr>'
+    first_line = True
+    output = '<table>'
+    thead = '<tr>'
     for result in results:
-        line = f'<tr><td>{result.name}</td><td>{result.message}</td><td>{result.expected}</td><td>{result.actual}</td><td>{result.points}</td><td>{result.max}</td></tr>'
-        output += line
+        row = '<tr>'
+        for key, value in result.items():
+            if first_line:
+                thead += f'<th>{key}</th>'
+            row += f'<td>{value}</td>'
+        if first_line:
+            output += f'{thead}</tr>'
+            first_line = False
+        output += f'{row}</tr>'
     output += '</table>'
     return output
 
