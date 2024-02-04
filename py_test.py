@@ -74,7 +74,7 @@ def load_cases() -> list:
     :rtype: none
     """
     cases_list = list()
-    file = open('../.github/workflows/pygrader.json', encoding='UTF-8')  # FIXME Input argument
+    file = open('.github/workflows/pygrader.json', encoding='UTF-8')  # FIXME Input argument
     cases = json.load(file)
     for item in cases:
         testcase = Testcase(
