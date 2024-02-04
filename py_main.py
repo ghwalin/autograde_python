@@ -10,21 +10,23 @@ def main():
     TARGET_URL = os.environ['TARGET_URL']
     TOKEN = os.getenv('TOKEN')
     FUNCTION = os.environ['FUNCTION']
-    ASSIGNMENT = os.environ['ASSIGNMENT']
     USERNAME = os.environ['USERNAME']
-    LINK = os.environ['LINK']
+    SERVER = os.environ['SERVER']
+    REPO = os.environ['REPO']
 
-    print (f'TARGET_URL={TARGET_URL}, TOKEN={TOKEN}, FUNCTION={FUNCTION}, ASSIGNMENT={ASSIGNMENT}, USERNAME={USERNAME}, LINK={LINK}')
-
+    print (f'TARGET_URL={TARGET_URL}, TOKEN={TOKEN}, FUNCTION={FUNCTION}, USERNAME={USERNAME}, SERVER={SERVER}, REPO={REPO}')
+    assignment = REPO.removesuffix('-' + USERNAME)
+    print (f'assignment={assignment}')
+    
     result = collect_results()
     update_moodle(
         result=result,
         target_url='https://moodle.it.bzz.ch/moodle',
-        token='aef1c413c539c619c48895e6f6f2d120',
+        token=TOKEN,
         function='mod_assignexternal_update_grade',
-        user_name='ghwalin',
+        user_name=USERNAME,
         assignment='lu99-a99-test',
-        external_link='https://github.com/ghwalin/autograde_python'
+        external_link=f'{SERVER}/{REPO}'
     )
 
 def collect_results() -> dict:
