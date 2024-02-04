@@ -21,11 +21,16 @@ jobs:
     # autograding an assignment in GitHub Classroom
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v4
-      #  with:
-      #    repository: ghwalin/autograde_python
-      #    path: autograde
-      - uses: actions/setup-python@v4
+      - name: Checkout student repo
+        uses: actions/checkout@v4
+  
+      - name: Checkout autograde repo
+        uses: actions/checkout@v4
+        with:
+          repository: ghwalin/autograde_python
+          path: autograde
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
       - name: Install dependencies
