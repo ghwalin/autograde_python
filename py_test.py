@@ -22,7 +22,7 @@ def py_test():
     for case in cases_list:
         result = {
             'name': case.name,
-            'message': '',
+            'feedback': '',
             'expected': '',
             'actual': '',
             'points': 0,
@@ -34,18 +34,18 @@ def py_test():
         if exitcode == ExitCode.OK:
             summary = output[len(output) - 1]
             if 'passed' in summary:
-                result['message'] = 'Success'
+                result['feedback'] = 'Success'
                 result['points'] = case.points
             elif 'xfailed' in summary:
-                result['message'] = 'Success: Fails as expected'
+                result['feedback'] = 'Success: Fails as expected'
                 result['points'] = case.points
             elif 'skipped' in summary:
-                result['message'] = 'Test was skipped at this time'
+                result['feedback'] = 'Test was skipped at this time'
         elif exitcode == ExitCode.TESTS_FAILED:
             extract_assertion(output, result)
             print('assert fail')
         else:
-            result['message'] = 'Unknown error, check GitHub Actions for details'
+            result['feedback'] = 'Unknown error, check GitHub Actions for details'
             print('Fail')
 
         total_points += result['points']
@@ -62,7 +62,7 @@ def extract_assertion(message, result) -> None:
     for index, line in enumerate(message):
         if 'AssertionError:' in line:
             parts = line.split('AssertionError:', 1)
-            result['message'] = 'Assertion Error: ' + parts[1]
+            result['feedback'] = 'Assertion Error: ' + parts[1]
             result['expected'] = message[index + 1]
             result['actual'] = message[index + 2]
             break
