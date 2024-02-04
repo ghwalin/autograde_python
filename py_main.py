@@ -12,10 +12,11 @@ def main():
     FUNCTION = os.environ['FUNCTION']
     USERNAME = os.environ['USERNAME']
     SERVER = os.environ['SERVER']
-    REPO = os.environ['REPO']
+    REPOPATH = os.environ['REPO']
 
-    print (f'TARGET_URL={TARGET_URL}, TOKEN={TOKEN}, FUNCTION={FUNCTION}, USERNAME={USERNAME}, SERVER={SERVER}, REPO={REPO}')
-    assignment = REPO.removesuffix('-' + USERNAME)
+    print (f'TARGET_URL={TARGET_URL}, TOKEN={TOKEN}, FUNCTION={FUNCTION}, USERNAME={USERNAME}, SERVER={SERVER}, REPO={REPOPATH}')
+    repository = REPOPATH.split('/')[1]
+    assignment = repository.removesuffix('-' + USERNAME)
     print (f'assignment={assignment}')
     
     result = collect_results()
