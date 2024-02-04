@@ -40,5 +40,5 @@ jobs:
           if [ -f requirements.txt ]; then pip3 install -r requirements.txt; fi
       - name: execute python script
         run: |
-          ls -la
-          # python3 ./autograde/py_main.py
+          ls -laR
+          python3 ./autograde/py_main.py
