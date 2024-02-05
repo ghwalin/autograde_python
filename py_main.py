@@ -26,7 +26,7 @@ def main():
         token=TOKEN,
         function='mod_assignexternal_update_grade',
         user_name=USERNAME,
-        assignment='lu99-a99-test',
+        assignment=assignment,
         external_link=f'{SERVER}/{REPOPATH}'
     )
 
