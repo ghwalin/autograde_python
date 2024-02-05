@@ -99,13 +99,14 @@ def update_moodle(
     :return:
     """
     url = f'{target_url}/webservice/rest/server.php/?wstoken={token}&wsfunction={function}'
+    feedback = urllib.parse.quote(result['feedback'])
     payload = {
         'assignment_name': assignment,
         'user_name': user_name,
         'points': result['points'],
         'max': result['max'],
         'externallink': external_link,
-        'feedback': result['feedback']
+        'feedback': feedback
     }
     print(url)
     print(payload)
