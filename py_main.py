@@ -107,8 +107,8 @@ def update_moodle(
         'externallink': external_link,
         'feedback': result['feedback']
     }
-    # response = requests.post(url=url, data=payload, timeout=30)
-    # print(response.status_code)
+    response = requests.post(url=url, data=payload, timeout=30)
+    print(response.status_code)
 
 
 if __name__ == '__main__':
